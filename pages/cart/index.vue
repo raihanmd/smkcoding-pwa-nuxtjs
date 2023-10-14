@@ -1,0 +1,14 @@
+<script setup>
+useSeoMeta({
+  title: "Lynx Shop | Cart",
+  ogTitle: "Lynx Shop | Cart",
+  description: "Cart page og Lynx Shop website.",
+  ogDescription: "Cart page og Lynx Shop website..",
+  ogImage:
+    "https://firebasestorage.googleapis.com/v0/b/ecomerce-bc524.appspot.com/o/logo%2Flynxshop.webp?alt=media&token=6e522069-86f6-49dc-853e-3f0dc0d879c4&_gl=1*182cemb*_ga*MjEyNjI5Njg5NS4xNjk1NzExMzg2*_ga_CW55HF8NVT*MTY5NjY5MjM4My4yLjEuMTY5NjY5MjQwOC4zNS4wLjA.",
+});
+</script>
+
+<template>
+  <p class="font-ubuntu">Cart page</p>
+</template>
