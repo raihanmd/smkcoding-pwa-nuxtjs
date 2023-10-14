@@ -24,21 +24,19 @@ const NAV_ITEMS = [
 </script>
 
 <template>
-  <header class="w-full border-b border-slate-200 p-4 flex justify-center sticky top-0">
+  <header class="w-full p-4 flex justify-center top-0 z-10 absolute">
     <div class="container">
       <div class="flex justify-between items-center">
         <NuxtLink to="/" class="text-xl font-semibold">
           <div class="flex justify-center items-center gap-2">
             <img src="~/assets/images/lynxshop.webp" class="w-8" />
-            <p class="font-open-sauce-one">LynxShop</p>
+            <p class="font-open-sauce-one hidden md:block">LynxShop</p>
           </div>
         </NuxtLink>
-        <nav class="flex items-center gap-2 sm:gap-6 font-quicksand transition-all">
-          <div v-for="item in NAV_ITEMS" :key="item.key">
-            <NuxtLink :to="`${item.link}`" :class="{ 'text-fuchsia-600 underline hover:text-fuchsia-600': route.name === item.route }" class="hover:text-fuchsia-300 font-semibold transition-all">
-              <p>{{ item.label }}</p>
-            </NuxtLink>
-          </div>
+        <nav class="flex items-center gap-3 sm:gap-6 font-quicksand transition-all">
+          <NuxtLink v-for="item in NAV_ITEMS" :key="item.key" :to="`${item.link}`" :class="{ 'text-white hover:text-white': route.name === item.route }" class="hover:text-fuchsia-300 font-semibold transition-all">
+            <p>{{ item.label }}</p>
+          </NuxtLink>
         </nav>
       </div>
     </div>
