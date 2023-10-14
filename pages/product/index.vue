@@ -10,5 +10,7 @@ useSeoMeta({
 </script>
 
 <template>
-  <p class="font-ubuntu">Product Page</p>
+  <div class="container">
+    <p class="font-ubuntu">Product Page</p>
+  </div>
 </template>

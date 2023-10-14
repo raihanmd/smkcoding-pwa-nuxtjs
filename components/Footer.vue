@@ -1,5 +1,5 @@
 <template>
-  <footer class="w-full py-6">
+  <footer class="w-full py-6 fixed bottom-0">
     <div class="container">
       <div class="flex justify-center items-center font-quicksand">
         <p>
