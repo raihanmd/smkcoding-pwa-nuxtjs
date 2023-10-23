@@ -4,7 +4,7 @@ export default defineNuxtConfig({
   modules: ["@nuxtjs/tailwindcss", "@vite-pwa/nuxt"],
   css: ["@/assets/css/font.css", "primevue/resources/themes/lara-light-blue/theme.css"],
   build: {
-    transpile: ["primevue"],
+    transpile: ["primevue", "vue-remix-icons"],
   },
   pwa: {
     manifest: {
