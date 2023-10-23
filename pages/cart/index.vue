@@ -1,4 +1,4 @@
-<script setup>
+<script lang="ts" setup>
 useSeoMeta({
   title: "Lynx Shop | Cart",
   ogTitle: "Lynx Shop | Cart",

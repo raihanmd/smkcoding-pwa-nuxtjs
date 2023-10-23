@@ -1,4 +1,4 @@
-<script setup>
+<script lang="ts" setup>
 useSeoMeta({
   title: "Lynx Shop | Product Page",
   ogTitle: "Lynx Shop | Product Page",
@@ -12,5 +12,6 @@ useSeoMeta({
 <template>
   <div class="container">
     <p class="font-ubuntu">Product Page</p>
+    <Card @sendMessage="(msg) => console.log(msg)" />
   </div>
 </template>

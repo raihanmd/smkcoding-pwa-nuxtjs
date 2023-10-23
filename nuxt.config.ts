@@ -2,7 +2,10 @@
 export default defineNuxtConfig({
   devtools: { enabled: true },
   modules: ["@nuxtjs/tailwindcss", "@vite-pwa/nuxt"],
-  css: ["@/assets/css/font.css"],
+  css: ["@/assets/css/font.css", "primevue/resources/themes/lara-light-blue/theme.css"],
+  build: {
+    transpile: ["primevue"],
+  },
   pwa: {
     manifest: {
       name: "Lynx Shop",

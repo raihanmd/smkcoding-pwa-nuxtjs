@@ -24,17 +24,17 @@ const NAV_ITEMS = [
 </script>
 
 <template>
-  <header class="w-full p-4 flex justify-center z-10">
+  <header class="w-full p-4 flex justify-center z-10 fixed">
     <div class="container">
       <div class="flex justify-between items-center">
-        <NuxtLink to="/" class="text-xl font-semibold">
+        <NuxtLink to="/" class="text-xl font-semibold" style="user-drag: none; -webkit-user-drag: none; user-select: none; -moz-user-select: none; -webkit-user-select: none; -ms-user-select: none">
           <div class="flex justify-center items-center gap-2">
-            <img src="~/assets/images/lynxshop.webp" class="w-8" />
+            <img src="~/assets/images/lynxshop.webp" class="w-8" style="user-drag: none; -webkit-user-drag: none; user-select: none; -moz-user-select: none; -webkit-user-select: none; -ms-user-select: none" />
             <p class="font-open-sauce-one hidden md:block">LynxShop</p>
           </div>
         </NuxtLink>
         <nav class="flex items-center gap-3 sm:gap-6 font-quicksand transition-all">
-          <NuxtLink v-for="item in NAV_ITEMS" :key="item.key" :to="`${item.link}`" :class="{ 'text-white hover:text-white': route.name === item.route }" class="hover:text-fuchsia-300 font-semibold transition-all">
+          <NuxtLink v-for="item in NAV_ITEMS" :key="item.key" :to="`${item.link}`" :class="{ 'text-sky-500 hover:text-sky-500': route.name === item.route }" class="hover:text-sky-300 font-semibold transition-all">
             <p>{{ item.label }}</p>
           </NuxtLink>
         </nav>
