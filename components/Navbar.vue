@@ -24,7 +24,7 @@ const NAV_ITEMS = [
 </script>
 
 <template>
-  <header class="w-full p-4 flex justify-center z-10 fixed">
+  <header class="w-full p-4 flex justify-center sticky top-0 backdrop-blur-sm bg-white/30">
     <div class="container">
       <div class="flex justify-between items-center">
         <NuxtLink to="/" class="text-xl font-semibold" style="user-drag: none; -webkit-user-drag: none; user-select: none; -moz-user-select: none; -webkit-user-select: none; -ms-user-select: none">

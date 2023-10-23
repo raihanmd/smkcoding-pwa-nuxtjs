@@ -2,16 +2,25 @@
 useSeoMeta({
   title: "Lynx Shop | Product Page",
   ogTitle: "Lynx Shop | Product Page",
-  description: "Product page og Lynx Shop website.",
-  ogDescription: "Product page og Lynx Shop website.",
-  ogImage:
-    "https://firebasestorage.googleapis.com/v0/b/ecomerce-bc524.appspot.com/o/logo%2Flynxshop.webp?alt=media&token=6e522069-86f6-49dc-853e-3f0dc0d879c4&_gl=1*182cemb*_ga*MjEyNjI5Njg5NS4xNjk1NzExMzg2*_ga_CW55HF8NVT*MTY5NjY5MjM4My4yLjEuMTY5NjY5MjQwOC4zNS4wLjA.",
+  description: "Product page Lynx Shop website.",
 });
+
+const { data, error, pending } = await useFetch("https://api.ecommerce.raihanmd.site/api/products");
 </script>
 
 <template>
-  <div class="container">
-    <p class="font-ubuntu">Product Page</p>
-    <Card @sendMessage="(msg) => console.log(msg)" />
+  <div class="container p-2 mx-auto w-full">
+    <div class="py-10">
+      <span v-if="pending">Loading...</span>
+      <span v-else-if="error">Error: {{ error }}</span>
+      <div class="mb-6 flex justify-end gap-6">
+        <!-- <Dropdown @selected-category="selectedCategory = $event" /> -->
+      </div>
+      <div class="flex gap-6 flex-wrap mx-auto">
+        <template v-for="item in data.payload" :key="item.productId">
+          <CardsCardProduct :product="item" class="w-[calc(100%/4-18px)]" />
+        </template>
+      </div>
+    </div>
   </div>
 </template>

@@ -1,6 +1,4 @@
 <script lang="ts" setup>
-import { ref } from "vue";
-const name = ref("Lynx Shop");
 useSeoMeta({
   title: "Lynx Shop | Home",
   ogTitle: "Lynx Shop | Home",
@@ -25,17 +23,6 @@ useSeoMeta({
     ></div>
   </div>
   <div class="container p-2 mx-auto">
-    <div class="flex w-full flex-col md:flex-row justify-center items-center pt-20 px-5 md:px-0">
-      <div class="flex gap-2 flex-col basis-1/3 items-center justify-center">
-        <h2 class="text-4xl md:text-6xl font-ubuntu font-semibold text-center md:text-left">Welcome to my website</h2>
-        <p class="font-quicksand text-center md:text-left">
-          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sunt deleniti soluta laboriosam blanditiis, quasi dolores architecto, quo exercitationem eveniet rem libero, officia doloremque eaque at voluptatum consectetur magnam
-          culpa.
-        </p>
-      </div>
-      <div class="basis-2/3">
-        <img src="~/assets/images/home__shop.webp" alt="Shop-3D-Image" style="user-drag: none; -webkit-user-drag: none; user-select: none; -moz-user-select: none; -webkit-user-select: none; -ms-user-select: none" />
-      </div>
-    </div>
+    <p class="font-quicksand">Hello Blud</p>
   </div>
 </template>
