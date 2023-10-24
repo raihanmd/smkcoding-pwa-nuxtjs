@@ -1,10 +1,22 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-  devtools: { enabled: true },
-  modules: ["@nuxtjs/tailwindcss", "@vite-pwa/nuxt"],
-  css: ["@/assets/css/font.css", "primevue/resources/themes/lara-light-blue/theme.css"],
+  app: {
+    head: {
+      link: [{ rel: "stylesheet", href: "https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" }],
+    },
+  },
+  devtools: { enabled: false },
+  modules: ["@nuxtjs/tailwindcss", "@vite-pwa/nuxt", "nuxt-primevue"],
+  css: ["@/assets/css/font.css", "primevue/resources/themes/lara-light-teal/theme.css"],
+  tailwindcss: { cssPath: "~/assets/css.tailwind.css", configPath: "~/tailwind.config.ts" },
   build: {
-    transpile: ["primevue", "vue-remix-icons"],
+    transpile: ["vue-remix-icons"],
+  },
+  primevue: {
+    options: { ripple: true },
+    components: {
+      include: ["Rating"],
+    },
   },
   pwa: {
     manifest: {

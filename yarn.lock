@@ -1027,6 +1027,11 @@
   resolved "https://registry.yarnpkg.com/@csstools/selector-specificity/-/selector-specificity-2.2.0.tgz#2cbcf822bf3764c9658c4d2e568bd0c0cb748016"
   integrity sha512-+OJ9konv95ClSTOJCmMZqpd5+YGsB2S+x6w3E1oaM8UuR5j8nTNHYSz8c9BEPGDOCMQYIEEGlVPj/VY64iTbGw==
 
+"@develoka/angka-rupiah-js@^1.0.3":
+  version "1.0.3"
+  resolved "https://registry.yarnpkg.com/@develoka/angka-rupiah-js/-/angka-rupiah-js-1.0.3.tgz#5ae32fe0fbe47431a15a117ba371f5486a8a4967"
+  integrity sha512-dkWuclc7reZd6eFGOnnm8vwWIkMbGdceSUILrJKMf2sBhOxc5/J169p2vTS1orX3dRoEZtZqb53ajKKv9zVT5A==
+
 "@esbuild/android-arm64@0.18.20":
   version "0.18.20"
   resolved "https://registry.yarnpkg.com/@esbuild/android-arm64/-/android-arm64-0.18.20.tgz#984b4f9c8d0377443cc2dfcef266d02244593622"
@@ -1526,7 +1531,7 @@
     which "^3.0.1"
     ws "^8.14.2"
 
-"@nuxt/kit@3.8.0", "@nuxt/kit@^3.5.3", "@nuxt/kit@^3.7.4":
+"@nuxt/kit@3.8.0", "@nuxt/kit@^3.5.3", "@nuxt/kit@^3.7.3", "@nuxt/kit@^3.7.4":
   version "3.8.0"
   resolved "https://registry.yarnpkg.com/@nuxt/kit/-/kit-3.8.0.tgz#cd8a32981c2fe151e0acde7145f7e4ca38920f24"
   integrity sha512-oIthQxeMIVs4ESVP5FqLYn8tj0S1sLd+eYreh+dNYgnJ2pTi7+THR12ONBNHjk668jqEe7ErUJ8UlGwqBzgezg==
@@ -5544,6 +5549,13 @@ nuxi@^3.9.1:
   optionalDependencies:
     fsevents "~2.3.3"
 
+nuxt-primevue@^0.0.3:
+  version "0.0.3"
+  resolved "https://registry.yarnpkg.com/nuxt-primevue/-/nuxt-primevue-0.0.3.tgz#e23701f93d5092982afef5c5b469eb9998caebd9"
+  integrity sha512-0k9i+whs+gNNua6WOc75QTfgRaG0MUP4WHX8QjUaWHFxjUzEUiuzQlbeCmiPRnf/LG2YnxsqyPzz+mNCrOa7/A==
+  dependencies:
+    "@nuxt/kit" "^3.7.3"
+
 nuxt@^3.7.4:
   version "3.8.0"
   resolved "https://registry.yarnpkg.com/nuxt/-/nuxt-3.8.0.tgz#e7149ed7a08dea1349881262adc0bd7559783036"
@@ -6241,7 +6253,7 @@ pretty-bytes@^6.1.1:
   resolved "https://registry.yarnpkg.com/pretty-bytes/-/pretty-bytes-6.1.1.tgz#38cd6bb46f47afbf667c202cfc754bffd2016a3b"
   integrity sha512-mQUvGU6aUFQ+rNvTIAcZuWGRT9a6f6Yrg9bHs4ImKF+HZCEK+plBvnAZYSIQztknZF2qnzNtr6F8s0+IuptdlQ==
 
-primevue@^3.36.0:
+primevue@^3.37.0:
   version "3.37.0"
   resolved "https://registry.yarnpkg.com/primevue/-/primevue-3.37.0.tgz#8788f6a4aba29613ba66d7c710445453273936d3"
   integrity sha512-azwnnQS4+HHJHrh07P0cz+8Nvqo6C08znwvPDyiILwVPkwIrTtgNVmYQtQ9HjLgwax+lC7scMetJpdKcNQU//g==
