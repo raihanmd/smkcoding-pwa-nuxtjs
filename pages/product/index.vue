@@ -5,7 +5,7 @@ useSeoMeta({
   description: "Product page Lynx Shop website.",
 });
 
-const { data, error, pending } = await useFetch("https://api.ecommerce.raihanmd.site/v1/product");
+const { data, error, pending } = await useFetch("https://www.api.ecommerce.raihanmd.site/v1/product");
 </script>
 
 <template>

@@ -10,7 +10,7 @@ const { product } = defineProps({
 });
 </script>
 <template>
-  <NuxtLink :to="`/product/${product.ownedBy}/${product.productSlug}`">
+  <NuxtLink :to="`${product.ownedBy}/${product.productSlug}`">
     <section class="bg-white max-w-60 sm:w-60 h-auto rounded-lg shadow-sm transition-all hover:-translate-y-1 hover:shadow-lg">
       <img :src="product.productImage" class="w-full h-full max-h-[255px] object-fit rounded-t-lg" />
       <div class="p-5 relative flex gap-2 flex-col justify-between h-[9em] sm:h-[10em] w-full">
