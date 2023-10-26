@@ -8,7 +8,7 @@ const { data, pending, error } = await useFetch(`https://www.ecommerce.raihanmd.
 <template>
   <div class="py-5 px-2">
     <span v-if="pending">Loading...</span>
-    <span v-else-if="error">Error: {{ error }}</span>
+    <span v-else-if="error">{{ error }}</span>
     <span v-if="data"><DetailProduct :product="data?.payload" /></span>
   </div>
 </template>

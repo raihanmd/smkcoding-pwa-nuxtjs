@@ -8,7 +8,7 @@ const { data: categoryResponse } = await useFetch("https://www.ecommerce.raihanm
 <template>
   <div class="py-5 px-2">
     <span v-if="pending">Loading...</span>
-    <span v-else-if="error">Error: {{ error }}</span>
+    <span v-else-if="error">{{ error }}</span>
     <div v-if="categoryResponse" class="mb-6 flex justify-end gap-6">
       <Dropdown :categories="categoryResponse.payload" />
     </div>
