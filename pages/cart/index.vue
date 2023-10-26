@@ -10,7 +10,7 @@ useSeoMeta({
 </script>
 
 <template>
-  <div class="container">
+  <div class="py-5 px-2">
     <p class="font-ubuntu">Cart page</p>
   </div>
 </template>

@@ -1,5 +1,7 @@
 <script setup>
 import { RiShoppingCart2Line } from "vue-remix-icons";
+import Rating from "primevue/rating";
+
 import toRupiah from "@develoka/angka-rupiah-js";
 
 const { product } = defineProps({
