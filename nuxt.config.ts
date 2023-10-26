@@ -14,6 +14,9 @@ export default defineNuxtConfig({
   },
   primevue: {
     options: { ripple: true },
+    components: {
+      include: ["Rating"],
+    },
   },
   pwa: {
     manifest: {
