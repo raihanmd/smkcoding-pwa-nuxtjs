@@ -21,7 +21,7 @@ duration-300 ${isShow ? 'rotate-180' : 'rotate-0'}`"
       ></i>
     </div>
 
-    <div v-show="isShow" class="z-10 bg-white divide-y divide-gray-100 rounded-lg shadow-xl w-full absolute top-14">
+    <div v-show="isShow" class="z-30 bg-white divide-y divide-gray-100 rounded-lg shadow-xl w-full absolute top-14">
       <ul class="py-2 text-sm text-gray-700">
         <li>
           <NuxtLink :to="`/product`">
