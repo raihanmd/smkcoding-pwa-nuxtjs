@@ -6,16 +6,16 @@ export default defineNuxtConfig({
     },
   },
   devtools: { enabled: false },
-  modules: ["@nuxtjs/tailwindcss", "@vite-pwa/nuxt", "nuxt-primevue"],
+  modules: ["@nuxtjs/tailwindcss", "@vite-pwa/nuxt", "nuxt-primevue", "@pinia/nuxt"],
   css: ["@/assets/css/font.css", "primevue/resources/themes/lara-light-teal/theme.css"],
   tailwindcss: { cssPath: "~/assets/css.tailwind.css", configPath: "~/tailwind.config.ts" },
   build: {
-    transpile: ["vue-remix-icons"],
+    transpile: ["vue-remix-icons", "vue-typer"],
   },
   primevue: {
     options: { ripple: true },
     components: {
-      include: ["Rating"],
+      include: ["Rating", "Dialog"],
     },
   },
   pwa: {

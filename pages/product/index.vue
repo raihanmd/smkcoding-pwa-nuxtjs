@@ -1,24 +1,31 @@
-<script setup>
+<script lang="ts" setup>
+import { products } from "~/composables/constants/products";
+import type { IProduct } from "~/types/product";
+
 useSeoMeta({
   title: "Lynx Shop | Product",
   ogTitle: "Lynx Shop | Product",
   description: "Product page Lynx Shop website.",
 });
 
-const { data: productResponse, error, pending } = await useFetch("https://www.ecommerce.raihanmd.site/api/products");
-const { data: categoryResponse } = await useFetch("https://www.ecommerce.raihanmd.site/api/category");
+const selectedCategory = ref("");
+const allProducts = computed(() => {
+  if (selectedCategory.value) {
+    return products.filter((item: IProduct) => item.category === selectedCategory.value);
+  }
+  return products;
+});
 </script>
 
 <template>
   <div class="py-5 px-2">
-    <span v-if="pending">Loading...</span>
-    <span v-else-if="error">{{ error }}</span>
-    <div v-if="categoryResponse" class="mb-6 flex justify-end gap-6">
-      <Dropdown :categories="categoryResponse.payload" />
+    <div class="mb-6 flex justify-end gap-6">
+      <NuxtLink to="/category/create" class="bg-orange-500 text-white flex justify- center items-center px-3 rounded-lg">Create Category</NuxtLink>
+      <Dropdown @selected-category="selectedCategory = $event" />
     </div>
-    <div v-if="productResponse" class="flex gap-2 px-2 flex-wrap justify-center w-full">
-      <template v-for="item in productResponse?.payload" :key="item.productId">
-        <CardProduct :product="item" class="card-product" />
+    <div class="flex gap-2 px-2 flex-wrap justify-center w-full">
+      <template v-for="item in allProducts" :key="item.id">
+        <CardsCardProduct :product="item" class="card-product" />
       </template>
     </div>
   </div>
