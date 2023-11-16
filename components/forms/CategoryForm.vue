@@ -1,15 +1,43 @@
 <script setup>
-const { data: categories } = await useFetch("https://www.ecommerce.raihanmd.site/api/category");
+const categoryStore = useCategoryStore();
+
+const isSuccess = ref(false);
+const isShowAlert = ref(false);
+const message = ref("");
+const router = useRouter();
+const isLoading = ref(false);
 
 const form = ref({
   name: "",
 });
-const isShowAlert = ref(false);
-const submitCategory = () => {
-  categories.push({ id: categories.length + 1, name: form.name });
-  isShowAlert.value = true;
-  form.value.name = "";
-    isShowAlert.value = false;
+
+const createCategory = async () => {
+  isLoading.value = true;
+
+  await categoryStore.createCategory(form.value);
+  if (!categoryStore.status) {
+    isSuccess.value = categoryStore.status;
+    message.value = categoryStore.message;
+    isShowAlert.value = true;
+    isLoading.value = false;
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  } else {
+    isSuccess.value = categoryStore.status;
+    message.value = categoryStore.message;
+    isShowAlert.value = true;
+    isLoading.value = false;
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+    form.value.name = "";
+    setTimeout(() => {
+      router.push({ path: "/product" });
+    }, 500);
+  }
 };
 </script>
 <template>
@@ -17,7 +45,7 @@ const submitCategory = () => {
     <div class="w-[500px]">
       <h1 class="text-2xl mb-7 font-medium">Create Category</h1>
       <div v-if="isShowAlert" class="p-4 mb-4 text-sm rounded-lg bg-green-100 text-green-800">Create Category Successfully</div>
-      <form @submit.prevent="submitCategory">
+      <form @submit.prevent="createCategory">
         <div class="mb-6">
           <label for="name" class="block mb-2 text-sm font-medium text-gray- 900">Name</label>
 
@@ -25,8 +53,8 @@ const submitCategory = () => {
             type="text"
             id="name"
             v-model="form.name"
-            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
-            placeholder="Masukan Nama Category"
+            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 lowercase"
+            placeholder="toy or smth..."
             required="true"
           />
         </div>

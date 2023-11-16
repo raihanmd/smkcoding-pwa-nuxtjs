@@ -19,5 +19,25 @@ export const useCategoryStore = defineStore("category", {
         this.categories = categories;
       }
     },
+    async createCategory(payload: any) {
+      const { baseUrl, apikey } = useAppConfig();
+      const { data, error } = await useFetch("/rest/v1/categories", {
+        baseURL: baseUrl,
+        method: "POST",
+        headers: {
+          apikey: apikey as string,
+        },
+        body: payload,
+      });
+
+      if (error.value) {
+        this.status = false;
+        this.message = error.value.message;
+      } else if (data) {
+        this.status = true;
+        this.message = "Create Product successfully";
+        this.categories = data.value;
+      }
+    },
   },
 });

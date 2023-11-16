@@ -1,3 +1,6 @@
+import { supabase } from "~/connection/supabase";
+import { nanoid } from "nanoid";
+
 export const useStorageStore = defineStore("storage", {
   state: () => ({
     storage: {} as any,

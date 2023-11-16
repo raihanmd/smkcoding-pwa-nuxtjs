@@ -1,10 +1,14 @@
 <script lang="ts" setup>
+import capitalizeFirstLetter from "~/utils/capitalizeFirstLetter";
+
 const { product } = defineProps({
   product: {
     type: Object,
     default: {},
   },
 });
+
+const { baseStorageUrl } = useAppConfig();
 </script>
 <template>
   <section class="p-10">
@@ -14,9 +18,9 @@ const { product } = defineProps({
         <span class="text-base font-medium">Back</span>
       </NuxtLink>
       <div class="flex items-center flex-col lg:flex-row gap-5">
-        <img :src="product.image" class="w-full lg:w-1/2 h-[500px] rounded-3xl" />
+        <img :src="baseStorageUrl + product.image" class="w-full lg:w-1/2 h-[500px] rounded-3xl" />
         <div class="w-full lg:w-1/2">
-          <p class="text-xl font-light mb-3">{{ product.category }}</p>
+          <p class="text-xl font-light mb-3">{{ capitalizeFirstLetter(product.category) }}</p>
           <h1 class="text-4xl font-bold mb-3">{{ product.name }}</h1>
           <h3 class="text-4xl font-light mb-3">${{ product.price }}</h3>
           <p class="mb-10">{{ product.description }}</p>
