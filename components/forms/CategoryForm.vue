@@ -9,9 +9,7 @@ const submitCategory = () => {
   categories.push({ id: categories.length + 1, name: form.name });
   isShowAlert.value = true;
   form.value.name = "";
-  setTimeout(() => {
     isShowAlert.value = false;
-  }, 3000);
 };
 </script>
 <template>

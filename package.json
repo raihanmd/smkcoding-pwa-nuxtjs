@@ -21,6 +21,7 @@
   },
   "dependencies": {
     "@pinia/nuxt": "^0.5.1",
+    "@supabase/supabase-js": "^2.38.4",
     "pinia": "^2.1.7",
     "primevue": "^3.37.0",
     "vue-remix-icons": "^3.5.0"

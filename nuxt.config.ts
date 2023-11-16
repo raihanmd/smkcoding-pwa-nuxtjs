@@ -1,5 +1,13 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
+  appConfig: {
+    supabaseDatabasePassword: process.env.SUPABASE_DATABASE_PASSWORD,
+    apikey: process.env.SUPABASE_API_KEY,
+    baseUrl: process.env.SUPABASE_URL,
+    secretKey: process.env.SUPABASE_SECRETS_KEY,
+    storageUrl: process.env.SUPABASE_STORAGE_URL,
+    baseStorageUrl: process.env.SUPABASE_GET_STORAGE_URL,
+  },
   app: {
     head: {
       link: [{ rel: "stylesheet", href: "https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" }],

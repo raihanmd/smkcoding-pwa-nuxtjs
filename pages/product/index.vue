@@ -1,26 +1,21 @@
 <script lang="ts" setup>
-import { products } from "~/composables/constants/products";
-import type { IProduct } from "~/types/product";
+import { useProductStore } from "~/stores/product";
 
-useSeoMeta({
-  title: "Lynx Shop | Product",
-  ogTitle: "Lynx Shop | Product",
-  description: "Product page Lynx Shop website.",
+const productStore = useProductStore();
+const allProducts = ref([]);
+
+productStore.getAllProducts().then(() => {
+  allProducts.value = productStore.products;
 });
 
 const selectedCategory = ref("");
-const allProducts = computed(() => {
-  if (selectedCategory.value) {
-    return products.filter((item: IProduct) => item.category === selectedCategory.value);
-  }
-  return products;
-});
 </script>
 
 <template>
   <div class="py-5 px-2">
     <div class="mb-6 flex justify-end gap-6">
       <NuxtLink to="/category/create" class="bg-orange-500 text-white flex justify- center items-center px-3 rounded-lg">Create Category</NuxtLink>
+      <NuxtLink to="/product/create" class="bg-green-500 text-white flex justify-center items-center px-3 rounded-lg">Create Products</NuxtLink>
       <Dropdown @selected-category="selectedCategory = $event" />
     </div>
     <div class="flex gap-2 px-2 flex-wrap justify-center w-full">
@@ -48,3 +43,4 @@ const allProducts = computed(() => {
   }
 }
 </style>
+~/stores/products ~/stores/product

@@ -1,5 +1,6 @@
 <script lang="ts" setup>
 import type { IProduct } from "~/types/product";
+
 const products = ref<IProduct[]>([]);
 
 const totalPrice = computed(() => {

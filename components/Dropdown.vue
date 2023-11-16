@@ -1,5 +1,12 @@
-<script lang="ts" setup>
-import { category } from "~/composables/constants/category";
+<script setup>
+import capitalizeFirstLetter from "~/utils/capitalizeFirstLetter";
+
+const categoryStore = useCategoryStore();
+const categories = ref([]);
+
+categoryStore.getAllCategory().then(() => {
+  categories.value = categoryStore.categories;
+});
 
 const isShow = ref(false);
 
@@ -21,8 +28,8 @@ duration-300 ${isShow ? 'rotate-180' : 'rotate-0'}`"
         <li>
           <span class="block px-4 py-2 hover:bg-primary hover:text-white transition duration-200 cursor-pointer" @click="$emit('selectedCategory', '')">All</span>
         </li>
-        <li v-for="(item, index) in category" :key="index">
-          <span class="block px-4 py-2 hover:bg-primary hover:text-white transition duration-200 cursor-pointer" @click="$emit('selectedCategory', item.name)">{{ item?.name }}</span>
+        <li v-for="(item, index) in categories" :key="index">
+          <span class="block px-4 py-2 hover:bg-primary hover:text-white transition duration-200 cursor-pointer" @click="$emit('selectedCategory', item.name)">{{ capitalizeFirstLetter(item.name) }}</span>
         </li>
       </ul>
     </div>
