@@ -33,7 +33,6 @@ const createCategory = async () => {
       top: 0,
       behavior: "smooth",
     });
-    form.value.name = "";
     setTimeout(() => {
       router.push({ path: "/product" });
     }, 500);
