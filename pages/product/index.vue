@@ -1,6 +1,10 @@
 <script lang="ts" setup>
 import { useProductStore } from "~/stores/product";
 
+definePageMeta({
+  middleware: ["user-access"],
+});
+
 const productStore = useProductStore();
 const allProducts = ref([]);
 
